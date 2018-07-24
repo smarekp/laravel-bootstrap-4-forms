@@ -739,10 +739,11 @@ class FormBuilder {
         $attrs  = $this->_buildAttrs(["class" => "form-check-input", "type" => $this->_type, "value" => $this->_meta['value']]);
         $inline = $this->_checkInline ? ' form-check-inline' : '';
         $label  = $this->_e($this->_label);
+        $for    = $this->_getId();
 
         $this->_resetFlags();
 
-        return '<div class="form-check' . $inline . '"><label class="form-check-label"><input ' . $attrs . '>' . $label . '</label></div>';
+        return '<div class="form-check' . $inline . '"><input ' . $attrs . '><label class="form-check-label" for="' . $for . '">' . $label . '</label></div>';
     }
 
     /**
