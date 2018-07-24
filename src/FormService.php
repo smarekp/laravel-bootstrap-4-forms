@@ -9,8 +9,6 @@ namespace bumerang07\Bootstrap4Forms;
  */
 class FormService {
 
-    public const HORIZONTAL = 1;
-
     /**
      * The Form builder instance
      *
@@ -64,11 +62,19 @@ class FormService {
      *
      * @return \NetoJose\Bootstrap4Forms\FormService
      */
-    public function open($style = 0): FormService
+    public function open(): FormService
     {
-        if ($style == self::HORIZONTAL) {
-            $this->_set('checkInlineForm', $inline);
-        }
+        return $this->render('open');
+    }
+
+    /**
+     * Open the form with horizontal stylings
+     *
+     * @return \NetoJose\Bootstrap4Forms\FormService
+     */
+    public function openHorizontal(): FormService
+    {
+        $this->_set('checkInlineForm', true);
         return $this->render('open');
     }
 
