@@ -1,6 +1,6 @@
 <?php
 
-namespace NetoJose\Bootstrap4Forms;
+namespace bumerang07\Bootstrap4Forms;
 
 use Illuminate\Support\ServiceProvider;
 
