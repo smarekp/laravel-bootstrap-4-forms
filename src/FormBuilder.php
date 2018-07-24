@@ -736,22 +736,22 @@ class FormBuilder {
      */
     private function _renderCheckboxOrRadio(): string
     {
-        $class  = rtrim('form-check-input ' + $this->_getValidationFieldClass());
-        $attrs  = $this->_buildAttrs(["class" => $class, "type" => $this->_type, "value" => $this->_meta['value']]);
+        // $class  = 'form-check-input' + $this->_getValidationFieldClass();
+        $attrs  = $this->_buildAttrs(["class" => "form-check-input", "type" => $this->_type, "value" => $this->_meta['value']]);
         $inline = $this->_checkInline ? ' form-check-inline' : '';
         $horiz  = $this->_checkInlineForm ? true : false;
         $label  = $this->_e($this->_label);
-        $error  = $this->_checkInline ? '' : $this->_getValidationFieldMessage();
+        // $error  = $this->_checkInline ? '' : $this->_getValidationFieldMessage();
         $for    = $this->_getId();
 
         $this->_resetFlags();
 
-        $render = '<div class="form-check' . $inline . '"><input ' . $attrs . '><label class="form-check-label" for="' . $for . '">' . $label . '</label></div>';
+        $inner = '<div class="form-check' . $inline . '"><input ' . $attrs . '><label class="form-check-label" for="' . $for . '">' . $label . '</label></div>';
 
         if (!$horiz)
-            return '<div class="form-group ">' . $render . $error . '</div>';
+            return '<div class="form-group ">' . $inner . '</div>';
         else
-            return '<div class="form-group "><div class="col-12 col-lg-6 offset-lg-4">' . $render  . '</div></div>';
+            return '<div class="form-group "><div class="col-12 col-lg-6 offset-lg-4">' . $inner  . '</div></div>';
     }
 
     /**
