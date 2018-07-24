@@ -381,6 +381,18 @@ class FormService {
     }
 
     /**
+     * Set a label
+     *
+     * @param type $label
+     * @return \NetoJose\Bootstrap4Forms\FormService
+     */
+    public function trans($key = 'validation.attributes'): FormService
+    {
+        $label = trans($key.'.'.$this->_builder->get('name'));
+        return $this->_set('label', $label);
+    }
+
+    /**
      * Create a button
      *
      * @param string $value
