@@ -218,7 +218,11 @@ class FormBuilder {
             'method' => $this->_Fmethod === 'get' ? 'get' : 'post'
         ];
 
-        if($this->_Fmultipart){
+        if ($this->_checkInlineForm) {
+            $props['class'] = 'form-horizontal';
+        }
+
+        if ($this->_Fmultipart){
             $props['enctype'] = 'multipart/form-data';
         }
 
