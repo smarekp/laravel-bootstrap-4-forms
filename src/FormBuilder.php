@@ -219,7 +219,7 @@ class FormBuilder {
         ];
 
         if ($this->_checkInlineForm) {
-            $props['class'] = 'form-horizontal';
+            $this->_attrs['class'] = 'form-horizontal';
         }
 
         if ($this->_Fmultipart){
@@ -763,7 +763,7 @@ class FormBuilder {
         if(!$inline)
             return '<div class="form-group ">' . $label . $field . $help . $error . '</div>';
         else
-            return '<div class="form-group "><div class="col col-md-3  col-lg-2">' . $label .'</div><div class="col-12 col-md-9  col-lg-10">' . $field . $help . $error . '</div></div>';
+            return '<div class="form-group "><div class="col-12 col-lg-4">' . $label .'</div><div class="col-12 col-lg-6">' . $field . $help . $error . '</div></div>';
     }
 
     /**
