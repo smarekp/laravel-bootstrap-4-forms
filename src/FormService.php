@@ -68,17 +68,6 @@ class FormService {
     }
 
     /**
-     * Open the form with horizontal stylings
-     *
-     * @return \NetoJose\Bootstrap4Forms\FormService
-     */
-    public function openHorizontal(): FormService
-    {
-        $this->_set('checkInlineForm', true);
-        return $this->render('open');
-    }
-
-    /**
      * Close the form
      *
      * @return \NetoJose\Bootstrap4Forms\FormService
@@ -86,6 +75,16 @@ class FormService {
     public function close(): FormService
     {
         return $this->render('close');
+    }
+
+    /**
+     * Set form-horizontal stylings
+     *
+     * @return \NetoJose\Bootstrap4Forms\FormService
+     */
+    public function horizontal(bool $horizontal = true): FormService
+    {
+        $this->_set('checkInlineForm', $horizontal);
     }
 
     /**
