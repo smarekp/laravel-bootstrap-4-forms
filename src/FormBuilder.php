@@ -498,16 +498,19 @@ class FormBuilder {
         if ($this->_type == 'anchor') {
             $href = $this->_url ?: 'javascript:void(0)';
             $attrs = $this->_buildAttrs(
-                    [
-                        'class' => $cls . $disabled,
-                        'href' => $href,
-                        'role' => 'button',
-                        'aria-disabled' => $disabled ? 'true' : null
-                    ]
+                [
+                    'class' => $cls . $disabled,
+                    'href' => $href,
+                    'role' => 'button',
+                    'aria-disabled' => $disabled ? 'true' : null
+                ],
+                [
+                    'class-form-control'
+                ]
             );
             $ret = '<a ' . $attrs . '>' . $value . '</a>';
         } else {
-            $attrs = $this->_buildAttrs(['class' => $cls, 'type' => $this->_type]);
+            $attrs = $this->_buildAttrs(['class' => $cls, 'type' => $this->_type], ['class-form-control']);
             $ret = '<button ' . $attrs . ' ' . $disabled . '>' . $value . '</button>';
         }
 
