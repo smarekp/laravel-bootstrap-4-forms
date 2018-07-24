@@ -683,6 +683,16 @@ class FormService {
     }
 
     /**
+     * Set autofocus style
+     *
+     * @return \NetoJose\Bootstrap4Forms\FormService
+     */
+    public function autofocus($status = true): FormService
+    {
+        return $this->_set('autofocus', $status);
+    }
+
+    /**
      * Set the input disabled status
      *
      * @param type $status

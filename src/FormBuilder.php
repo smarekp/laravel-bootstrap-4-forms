@@ -107,7 +107,13 @@ class FormBuilder {
      * @var boolean
      */
     private $_disabled;
-
+   
+    /**
+     * Autofocus flag
+     *
+     * @var boolean
+     */
+    private $_autofocus;
     /**
      * Input id
      *
@@ -596,6 +602,10 @@ class FormBuilder {
             $ret .= 'disabled ';
         }
 
+        if ($this->_autofocus) {
+            $ret .= 'autofocus ';
+        }
+
         if (in_array($this->_type, ['radio', 'checkbox'])) {
             $value = $this->_getValue();
             if (
@@ -817,6 +827,7 @@ class FormBuilder {
         $this->_size = null;
         $this->_readonly = false;
         $this->_disabled = false;
+        $this->_autofocus = false;
         $this->_id = null;
         $this->_name = null;
         $this->_label = null;
