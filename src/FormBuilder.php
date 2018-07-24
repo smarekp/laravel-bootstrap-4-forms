@@ -550,6 +550,7 @@ class FormBuilder {
         $props['name'] = $this->_name;
         $props['autocomplete'] = $props['name'];
         $props['id'] = $this->_getId();
+        $props['class'] = isset($props['class']) ? $props['class'] : '';
 
         if ($this->_type == 'select' && $this->_multiple) {
             $props['name'] = $props['name'] . '[]';
@@ -563,7 +564,7 @@ class FormBuilder {
             $props['aria-describedby'] = $this->_getIdHelp();
         }
 
-        $props['class'] = in_array('class-form-control', $ignore) ? '' : " form-control";
+        $props['class'] .= in_array('class-form-control', $ignore) ? '' : " form-control";
 
         if ($this->_size) {
             $props['class'] .= ' form-control-' . $this->_size;
@@ -737,7 +738,7 @@ class FormBuilder {
     private function _renderCheckboxOrRadio(): string
     {
         // $class  = 'form-check-input' + $this->_getValidationFieldClass();
-        $attrs  = $this->_buildAttrs(["class" => "form-check-input", "type" => $this->_type, "value" => $this->_meta['value']]);
+        $attrs  = $this->_buildAttrs(["class" => "form-check-input", "type" => $this->_type, "value" => $this->_meta['value']], ['class-form-control']);
         $inline = $this->_checkInline ? ' form-check-inline' : '';
         $horiz  = $this->_checkInlineForm ? true : false;
         $label  = $this->_e($this->_label);
