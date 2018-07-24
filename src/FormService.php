@@ -388,7 +388,7 @@ class FormService {
      */
     public function trans($key = 'validation.attributes'): FormService
     {
-        $label = trans($key.'.'.$this->_builder->get('name'));
+        $label = title_case(trans($key.'.'.$this->_builder->get('name')));
         return $this->_set('label', $label);
     }
 
