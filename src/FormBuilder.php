@@ -797,7 +797,6 @@ class FormBuilder {
         $this->_url = null;
         $this->_placeholder = null;
         $this->_checkInline = false;
-        $this->_checkInlineForm = false;
         $this->_size = null;
         $this->_readonly = false;
         $this->_disabled = false;
@@ -824,6 +823,7 @@ class FormBuilder {
         $this->_Fmultipart = false;
         $this->_Fdata = null;
         $this->_FidPrefix = '';
+        $this->_checkInlineForm = false;
     }
 
 }
