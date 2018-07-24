@@ -84,7 +84,7 @@ class FormService {
      */
     public function horizontal(bool $horizontal = true): FormService
     {
-        $this->_set('checkInlineForm', $horizontal);
+        return $this->_set('checkInlineForm', $horizontal);
     }
 
     /**
